@@ -1,115 +1,209 @@
-import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
+// index.js 
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import React, { useState } from 'react';
+import CareerCard from '../components/CareerCard';
+import careers from '../data/careers';
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const EnvironmentalCareersApp = () => {
+  const [openCard, setOpenCard] = useState(null);
 
-export default function Home() {
+  const toggleCard = (cardId) => {
+    setOpenCard(openCard === cardId ? null : cardId);
+  };
+
+
   return (
-    <div
-      className={`${geistSans.className} ${geistMono.className} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              pages/index.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div className="bg-gray-50 text-gray-800 min-h-screen">
+      {/* Header */}
+      <header className="bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-800 text-white py-16">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <h1 className="text-5xl font-bold mb-4 animate-in fade-in duration-700">
+            🌍 Environmental Careers Guide
+          </h1>
+          <p className="text-xl mb-8 opacity-90 animate-in fade-in duration-700 delay-200">
+            Discover Your Path to Making a Difference in 2025
+          </p>
+          <div className="bg-white/20 backdrop-blur-sm rounded-lg p-6 max-w-3xl mx-auto animate-in fade-in duration-700 delay-300">
+            <p className="text-lg">
+              The environmental sector is experiencing <strong>7% projected growth</strong> from 2023-2033, 
+              creating exciting opportunities for passionate professionals to tackle climate change and sustainability challenges.
+            </p>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+
+      {/* Navigation */}
+      <nav className="bg-white shadow-md sticky top-0 z-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="flex justify-center space-x-8 py-4">
+            <a href="#overview" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors">
+              Overview
+            </a>
+            <a href="#careers" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors">
+              Careers
+            </a>
+            <a href="#growth" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors">
+              Market Trends
+            </a>
+            <a href="#resources" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors">
+              Resources
+            </a>
+          </div>
+        </div>
+      </nav>
+
+      {/* Overview Section */}
+      <section id="overview" className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-emerald-800 mb-4">Why Choose Environmental Science?</h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Environmental science offers diverse career paths where you can directly contribute to solving 
+              the world's most pressing challenges while building a rewarding professional future.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6 bg-gradient-to-br from-emerald-50 to-emerald-100 rounded-xl">
+              <div className="text-4xl mb-4">📈</div>
+              <h3 className="text-xl font-semibold mb-2">Growing Field</h3>
+              <p className="text-gray-600">7% projected growth rate, faster than average for all occupations</p>
+            </div>
+            <div className="text-center p-6 bg-gradient-to-br from-blue-50 to-emerald-50 rounded-xl">
+              <div className="text-4xl mb-4">💰</div>
+              <h3 className="text-xl font-semibold mb-2">Competitive Salaries</h3>
+              <p className="text-gray-600">Starting salaries from $45K-$65K, senior positions $80K-$400K+</p>
+            </div>
+            <div className="text-center p-6 bg-gradient-to-br from-emerald-50 to-amber-50 rounded-xl">
+              <div className="text-4xl mb-4">🌱</div>
+              <h3 className="text-xl font-semibold mb-2">Meaningful Impact</h3>
+              <p className="text-gray-600">Direct contribution to environmental protection and sustainability</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Careers Section */}
+      <section id="careers" className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-emerald-800 mb-4">10 Environmental Careers to Explore</h2>
+            <p className="text-xl text-gray-600">
+              Click on each career to learn more about requirements, salaries, and daily responsibilities
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-8 items-start">
+            {careers.map((career) => (
+              <CareerCard
+                key={career.id}
+                career={career}
+                openCard={openCard}
+                toggleCard={toggleCard}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Market Trends Section */}
+      <section id="growth" className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-emerald-800 mb-4">Market Trends & Growth</h2>
+            <p className="text-xl text-gray-600">
+              Environmental careers are expanding rapidly due to increased focus on sustainability and climate change
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="text-center p-6 bg-gradient-to-br from-emerald-100 to-emerald-200 rounded-xl">
+              <div className="text-3xl font-bold text-emerald-600 mb-2">7%</div>
+              <p className="text-sm text-emerald-800 font-medium">Annual Growth Rate</p>
+              <p className="text-xs text-gray-600 mt-2">Faster than average for all occupations</p>
+            </div>
+            <div className="text-center p-6 bg-gradient-to-br from-blue-100 to-emerald-100 rounded-xl">
+              <div className="text-3xl font-bold text-blue-600 mb-2">8,500</div>
+              <p className="text-sm text-emerald-800 font-medium">Annual Job Openings</p>
+              <p className="text-xs text-gray-600 mt-2">Expected through 2033</p>
+            </div>
+            <div className="text-center p-6 bg-gradient-to-br from-emerald-100 to-amber-100 rounded-xl">
+              <div className="text-3xl font-bold text-emerald-800 mb-2">56K</div>
+              <p className="text-sm text-emerald-800 font-medium">Current Professionals</p>
+              <p className="text-xs text-gray-600 mt-2">Environmental scientists in the US</p>
+            </div>
+            <div className="text-center p-6 bg-gradient-to-br from-amber-100 to-emerald-100 rounded-xl">
+              <div className="text-3xl font-bold text-amber-700 mb-2">$60K</div>
+              <p className="text-sm text-emerald-800 font-medium">Average Salary</p>
+              <p className="text-xs text-gray-600 mt-2">Entry to mid-level positions</p>
+            </div>
+          </div>
+
+          <div className="mt-12 bg-gradient-to-r from-emerald-50 to-emerald-100 rounded-xl p-8">
+            <h3 className="text-2xl font-bold text-emerald-800 mb-4">Professional Insight</h3>
+            <blockquote className="text-lg italic text-gray-700 mb-4">
+              "The environmental sector is experiencing unprecedented growth as companies and governments prioritize sustainability. 
+              We're seeing demand for professionals who can bridge traditional environmental science with emerging technologies like AI and data analytics."
+            </blockquote>
+            <p className="text-sm text-gray-600">- Dr. Sarah Chen, Senior Environmental Consultant, EcoTech Solutions</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Resources Section */}
+      <section id="resources" className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-emerald-800 mb-4">Getting Started Resources</h2>
+            <p className="text-xl text-gray-600">Essential steps to launch your environmental career</p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="text-3xl mb-4">🎓</div>
+              <h3 className="text-xl font-bold text-emerald-800 mb-2">Education Pathways</h3>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Research accredited environmental programs</li>
+                <li>• Consider internship opportunities</li>
+                <li>• Explore graduate specializations</li>
+                <li>• Look into professional certifications</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="text-3xl mb-4">🔗</div>
+              <h3 className="text-xl font-bold text-emerald-800 mb-2">Professional Networks</h3>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Join environmental organizations</li>
+                <li>• Attend sustainability conferences</li>
+                <li>• Connect with professionals on LinkedIn</li>
+                <li>• Participate in local environmental groups</li>
+              </ul>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-lg p-6">
+              <div className="text-3xl mb-4">🚀</div>
+              <h3 className="text-xl font-bold text-emerald-800 mb-2">Build Experience</h3>
+              <ul className="text-gray-600 space-y-2 text-sm">
+                <li>• Volunteer for environmental projects</li>
+                <li>• Seek entry-level positions</li>
+                <li>• Develop technical skills</li>
+                <li>• Create a portfolio of projects</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-emerald-800 text-white py-8">
+        <div className="max-w-6xl mx-auto px-4 text-center">
+          <p className="text-lg mb-2">Ready to start your environmental career journey?</p>
+          <p className="text-emerald-200">The planet needs passionate professionals like you.</p>
+        </div>
       </footer>
     </div>
   );
-}
+};
+
+export default EnvironmentalCareersApp;
