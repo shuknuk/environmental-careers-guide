@@ -7,12 +7,17 @@ const CareerCard = ({ career, openCard, toggleCard }) => {
 
   return (
     <div className="flex flex-col bg-white rounded-xl shadow-lg p-6 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 cursor-pointer">
-      <div className="flex items-center mb-4" onClick={() => toggleCard(career.id)}>
-        <div className="text-3xl mr-4">{career.icon}</div>
-        <div>
-          <h3 className="text-2xl font-bold text-emerald-800">{career.title}</h3>
-          <p className="text-emerald-600 font-medium">{career.salary}</p>
+      <div className="flex items-center mb-4 justify-between" onClick={() => toggleCard(career.id)}>
+        <div className="flex items-center">
+          <div className="text-3xl mr-4">{career.icon}</div>
+          <div>
+            <h3 className="text-2xl font-bold text-emerald-800">{career.title}</h3>
+            <p className="text-emerald-600 font-medium">{career.salary}</p>
+          </div>
         </div>
+        <span className={`text-xl transform transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}>
+          ▼
+        </span>
       </div>
 
       {isOpen && (

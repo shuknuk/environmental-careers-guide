@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import CareerCard from '../components/CareerCard';
 import careers from '../data/careers';
+import Head from 'next/head'; 
 
 const EnvironmentalCareersApp = () => {
   const [openCard, setOpenCard] = useState(null);
@@ -12,8 +13,19 @@ const EnvironmentalCareersApp = () => {
   };
 
 
+
   return (
-    <div className="bg-gray-50 text-gray-800 min-h-screen">
+    <>
+      <Head>
+        <title>Environmental Careers Guide</title>
+        <link rel="icon" type="image/png" href="../public/pine.png" />
+      </Head>
+      <style jsx global>{`
+        html {
+          scroll-behavior: smooth;
+        }
+      `}</style>
+      <div className="bg-gray-50 text-gray-800 min-h-screen">
       {/* Header */}
       <header className="bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-800 text-white py-16">
         <div className="max-w-6xl mx-auto px-4 text-center">
@@ -200,9 +212,11 @@ const EnvironmentalCareersApp = () => {
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p className="text-lg mb-2">Ready to start your environmental career journey?</p>
           <p className="text-emerald-200">The planet needs passionate professionals like you.</p>
+          <p className="text-sm font-bold text-emerald-300 mt-2">© 2025 Kinshuk Goel | All Rights Reserved</p>
         </div>
       </footer>
-    </div>
+      </div>
+    </>
   );
 };
 
