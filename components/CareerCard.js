@@ -39,6 +39,20 @@ const CareerCard = ({ career, openCard, toggleCard }) => {
               <strong>Growth Outlook:</strong> {career.outlook} <strong>Key Point:</strong> {career.challenge}
             </p>
           </div>
+          {career.quote && (
+            <div className="border-t border-gray-200 pt-4">
+              <h4 className="font-semibold text-emerald-800 mb-1">In Their Words</h4>
+              <blockquote className="text-sm italic text-gray-700">"{career.quote.text}"</blockquote>
+              <a
+                href={career.quote.source}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-decoration-line: underline text-green-800 mt-1 inline-block"
+              >
+                Source
+              </a>
+            </div>
+          )}
         </div>
       )}
     </div>
