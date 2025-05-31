@@ -27,8 +27,12 @@ const EnvironmentalCareersApp = () => {
       `}</style>
       <div className="bg-gray-50 text-gray-800 min-h-screen">
       {/* Header */}
-      <header className="bg-gradient-to-br from-emerald-500 via-emerald-600 to-emerald-800 text-white py-16">
-        <div className="max-w-6xl mx-auto px-4 text-center">
+      <header
+        className="relative bg-cover bg-center text-white py-16"
+        style={{ backgroundImage: 'url("/bkgd.jpg")' }}
+      >
+        <div className="absolute inset-0 bg-black/50 z-0"></div>
+        <div className="relative z-10 max-w-6xl mx-auto px-4 text-center">
           <h1 className="text-5xl font-bold mb-4 animate-in fade-in duration-700">
             🌍 Environmental Careers Guide
           </h1>
