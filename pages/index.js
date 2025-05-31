@@ -48,17 +48,21 @@ const EnvironmentalCareersApp = () => {
       <nav className="bg-white shadow-md sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-4">
           <div className="flex justify-center space-x-8 py-4">
-            <a href="#overview" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors">
-              Overview
+            <a href="#overview" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors flex items-center space-x-2">
+              <span>🔍</span>
+              <span>Overview</span>
             </a>
-            <a href="#careers" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors">
-              Careers
+            <a href="#careers" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors flex items-center space-x-2">
+              <span>💼</span>
+              <span>Careers</span>
             </a>
-            <a href="#growth" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors">
-              Market Trends
+            <a href="#growth" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors flex items-center space-x-2">
+              <span>📊</span>
+              <span>Market Trends</span>
             </a>
-            <a href="#resources" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors">
-              Resources
+            <a href="#resources" className="text-emerald-800 hover:text-emerald-600 font-medium transition-colors flex items-center space-x-2">
+              <span>📚</span>
+              <span>Resources</span>
             </a>
           </div>
         </div>
