@@ -30,6 +30,10 @@ const CareerCard = ({ career, openCard, toggleCard }) => {
             <h4 className="font-semibold text-emerald-800">Education Requirements</h4>
             <p className="text-sm text-gray-600">{career.education}</p>
           </div>
+          <div className="border-l-4 border-yellow-400 pl-4">
+            <h4 className="font-semibold text-emerald-800">Admission Requirements</h4>
+            <p className="text-sm text-gray-600">{career.admissions}</p>
+          </div>
           <div className="border-l-4 border-amber-600 pl-4">
             <h4 className="font-semibold text-emerald-800">Daily Tasks</h4>
             <p className="text-sm text-gray-600">{career.dailyTasks}</p>
