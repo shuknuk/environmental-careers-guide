@@ -22,6 +22,15 @@ const CareerCard = ({ career, openCard, toggleCard }) => {
 
       {isOpen && (
         <div className="mt-4 space-y-4 fade-in">
+          {career.imageUrl && (
+            <div className="mb-4">
+              <img
+                src={career.imageUrl}
+                alt={`${career.title} visual`}
+                className="w-full max-h-60 object-cover rounded-lg shadow"
+              />
+            </div>
+          )}
           <div className="border-l-4 border-emerald-500 pl-4">
             <h4 className="font-semibold text-emerald-800">Job Description</h4>
             <p className="text-sm text-gray-600">{career.description}</p>

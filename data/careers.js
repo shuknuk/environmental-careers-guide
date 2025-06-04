@@ -15,7 +15,8 @@ const careers = [
       quote: {
         text: "I was wondering about the company's approach to sustainability and environmental initiatives...",
         source: "https://workbred.co.uk/career/environmental-scientist?page=interview"
-      }
+      },
+      imageUrl: '/jobPics/envSci.png',
     },
     {
       id: 'career2',
@@ -31,7 +32,8 @@ const careers = [
       quote: {
         text: "Climate change is the greatest threat to our existence in our short history on this planet.",
         source: "https://curious.earth/blog/climate-change-quotes/"
-      }
+      },
+      imageUrl: '/jobPics/renewEner.png',
     },
     {
       id: 'career3',
@@ -47,7 +49,8 @@ const careers = [
       quote: {
         text: "I lead by example, consistently demonstrating sustainable practices in my daily work and encouraging my team to do the same.",
         source: "https://www.finalroundai.com/blog/sustainability-interview-questions"
-      }
+      },
+      imageUrl: '/jobPics/susMana.png',
     },
     {
       id: 'career4',
@@ -63,7 +66,8 @@ const careers = [
       quote: {
         text: "It is all about understanding the bigger picture of the interplay between nature and our society!",
         source: "https://theinterviewportal.com/2023/06/23/wildlife-biologist-interview-4/"
-      }
+      },
+      imageUrl: '/jobPics/wlidBiol.png',
     },
     {
       id: 'career5',
@@ -79,7 +83,8 @@ const careers = [
       quote: {
         text: "My passion for the environment and a keen interest in problem-solving led me to environmental consultancy.",
         source: "https://uk.indeed.com/career-advice/interviewing/environmental-consultant-interview-questions"
-      }
+      },
+      imageUrl: '/jobPics/envCon.png',
     },
     {
       id: 'career6',
@@ -95,7 +100,8 @@ const careers = [
       quote: {
         text: "Communicating complex climate change data and insights to non-technical stakeholders requires a tailored approach.",
         source: "https://www.remoterocketship.com/advice/guide/data-scientist/climate-change-analyst-interview-questions-and-answers"
-      }
+      },
+      imageUrl: '/jobPics/climaCha.png',
     },
     {
       id: 'career7',
@@ -111,7 +117,8 @@ const careers = [
       quote: {
         text: "The human right to water entitles everyone to sufficient, safe, acceptable, physically accessible and affordable water for personal and domestic use.",
         source: "https://www.unwater.org/water-facts/human-rights"
-      }
+      },
+      imageUrl: '/jobPics/waterResSpec.png',
     },
     {
       id: 'career8',
@@ -127,7 +134,8 @@ const careers = [
       quote: {
         text: "Green buildings not only conserve resources but also improve the health and productivity of occupants.",
         source: "https://www.epa.gov/greenbuilding"
-      }
+      },
+      imageUrl: '/jobPics/greenBuioldSpec.jpg',
     },
     {
       id: 'career9',
@@ -143,7 +151,8 @@ const careers = [
       quote: {
         text: "The tools of data science can help answer critical questions about Earth’s future.",
         source: "https://www.nature.com/articles/d41586-020-03188-2"
-      }
+      },
+      imageUrl: '/jobPics/envDataSci.png',
     },
     {
       id: 'career10',
@@ -159,7 +168,8 @@ const careers = [
       quote: {
         text: "The more you know about a species, the more you understand about how better to help protect them.",
         source: "https://conservationbytes.com/2010/08/06/conservation-quotes/"
-      }
+      },
+      imageUrl: '/jobPics/consProMan.png',
     }
   ];
 
