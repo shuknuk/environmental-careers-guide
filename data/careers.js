@@ -102,8 +102,8 @@ const careers = [
       outlook: 'Good - water scarcity increasing demand.',
       challenge: 'Complex regulatory environment and competing water uses.',
       quote: {
-        text: "Water is the driving force of all nature.",
-        source: "https://www.brainyquote.com/quotes/leonardo_da_vinci_106428"
+        text: "The human right to water entitles everyone to sufficient, safe, acceptable, physically accessible and affordable water for personal and domestic use.",
+        source: "https://www.unwater.org/water-facts/human-rights"
       }
     },
     {
@@ -117,8 +117,8 @@ const careers = [
       outlook: 'Excellent - green construction market expanding.',
       challenge: 'Creating healthier, more efficient built environments.',
       quote: {
-        text: "Sustainability in architecture is not just a trend; it's our responsibility.",
-        source: "https://www.archdaily.com/959004/50-quote-collections-for-architects-and-designers"
+        text: "Green buildings not only conserve resources but also improve the health and productivity of occupants.",
+        source: "https://www.epa.gov/greenbuilding"
       }
     },
     {
@@ -132,8 +132,8 @@ const careers = [
       outlook: 'Excellent - high demand for data skills in environmental sector.',
       challenge: 'Keeping up with rapidly evolving technology.',
       quote: {
-        text: "Without data, you're just another person with an opinion.",
-        source: "https://www.goodreads.com/quotes/4416-without-data-you-re-just-another-person-with-an-opinion"
+        text: "The tools of data science can help answer critical questions about Earth’s future.",
+        source: "https://www.nature.com/articles/d41586-020-03188-2"
       }
     },
     {
