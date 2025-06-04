@@ -1,4 +1,4 @@
-// index.js 
+// index.js
 
 import React, { useState } from 'react';
 import CareerCard from '../components/CareerCard';
@@ -109,7 +109,7 @@ const EnvironmentalCareersApp = () => {
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-emerald-800 mb-4">10 Environmental Careers to Explore</h2>
             <p className="text-xl text-gray-600">
-              Click on each career to learn more about requirements, salaries, and daily responsibilities
+              Click on each career to learn more about requirements, salaries, daily responsibilities, and admissions information.
             </p>
           </div>
 
